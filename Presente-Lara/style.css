@@ -1,0 +1,333 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: rgb(42, 42, 42);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.doc{
+    background-color: white;
+    width: 90%;
+    margin: 2%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    position: relative;
+    background-color: black;
+    width: 40%;
+}
+.logo-animation{
+    animation: spawn 2s ease-out both;
+    z-index: 1;
+}
+header img {
+    height: 90px;
+    animation: slide 3s ease both;
+}
+header h1{
+    color: white;
+    position: absolute;
+    font-size: 40px;
+    margin-left: 5%;
+}
+header h1::before{
+    content: "";
+    width: 300px;
+    height: 50px;
+    position: absolute;
+    background: black;
+    animation: fade-out 3.2s ease both;
+}
+header .h-left{
+    width: 150px;
+    height: 100%;
+    position: absolute;
+    background-color: black;
+    left: -10%;
+    transform: skewX(20deg);
+}
+header .h-right{
+    width: 150px;
+    height: 100%;
+    position: absolute;
+    background-color: black;
+    right: -10%;
+    transform: skewX(-20deg);
+}
+.seccao{
+    background-color: black;
+    height: 2px;
+    width: 40%;
+    margin: 50px;
+}
+section{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.row{
+    flex-direction: row;
+}
+.cabecalho{
+    margin-top: 5%;
+}
+.cabecalho .detalhes{
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.cabecalho .detalhes h2{
+    margin: 15px;
+    text-align: justify;
+}
+.cabecalho img{
+    width: 25%;
+    height: auto;
+    /* border: 3px solid black; */
+    user-select: none;
+}
+.habilidades img{
+    width: 25%;
+    user-select: none;
+}
+.habilidades h2{
+    width: 70%;
+    text-align: justify;
+}
+.audios div{
+    width: 80%;
+}
+.audio{
+    width: 100%;
+    max-width: 900px;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(red, 0, 0, 0.4);
+    background: rgb(192, 192, 192);
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    margin-top: 10px;
+}
+.audio .play01, .audio .play02, .audio .play03{
+    width: 0;
+    height: 0;
+    border-bottom: 15px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 15px solid transparent;
+    border-left: 20.5px solid black;
+    margin-left: 1.5em;
+    cursor: pointer;
+    z-index: 3;
+    opacity: 1;
+}
+.play01.active,.play02.active,.play03.active{
+    opacity: 0;
+}
+.audio .pause01, .audio .pause02, .audio .pause03{
+    width: 1.5%;
+    height: 25px;
+    z-index: 1;
+    background: transparent;
+    transform: translateX(-25px);
+    border-left: 4px solid black;
+    border-right: 4px solid black;
+    cursor: pointer;
+    opacity: 0;
+}
+.pause01.active, .pause02.active, .pause03.active{
+    opacity: 1;
+}
+.audio .soundWaves01, .soundWaves02, .soundWaves03{
+    position: relative;
+    width: 80%;
+    height: 40px;
+    background: transparent;
+    display: inline-flex;
+    justify-content: space-between;
+    transform: rotate(180deg);
+}
+.line1, .line2, .line3, .line4, .line5, .line6, .line7, .line8, .line9, .line10, .line11, .line12, .line13,
+ .line14, .line15, .line16, .line17, .line18, .line19, .line20, .line21, .line22, .line23, .line24, .line25, .line26{
+    background: black;
+    height: 40px;
+    width: 8px;
+    margin-left: 2px;
+    animation: upDown 1s linear infinite;
+    animation-delay: calc(var(--i) * -0.25s);
+    transition: all .5s;
+    opacity: 0;
+}
+.line1.active, .line2.active, .line3.active, .line4.active, .line5.active,
+ .line6.active, .line7.active, .line8.active, .line9.active, .line10.active, .line11.active, .line12.active, .line13.active,
+ .line14.active, .line15.active, .line16.active, .line17.active, .line18.active,
+ .line19.active, .line20.active, .line21.active, .line22.active, .line23.active, .line24.active, .line25.active, .line26.active{
+    opacity: 1;
+    animation: upDown 1s linear infinite;
+    animation-delay: calc(var(--i) * -0.25s);
+}
+.carta{
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+}
+.carta img{
+    width: 60%;
+    margin: 2.5%;
+    user-select: none;
+}
+.carta h2{
+    font-size: 50px;
+    text-transform: uppercase;
+}
+.carta .glitches{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    user-select: none;
+}
+.carta .glitches:hover .glitch.scp{
+    opacity: 0;
+}
+.carta .glitches:hover .glitch.lara{
+    opacity: 1;
+}
+.glitch{
+    font-size: 4.8rem;
+    font-weight: bold;
+    position: relative;
+    text-shadow: 0.05em 0 0 rgba(113, 113, 113, 0.75),
+        -0.025em -0.05em 0 rgba(0, 0, 0, 0.75),
+        0.025em 0.05em 0 rgba(174, 174, 174, 0.75);
+    animation: glitch 500ms infinite;
+    animation-delay: 3s;
+    cursor: pointer;
+}
+.glitch.lara{
+    position: absolute;
+    opacity: 0;
+}
+.glitch span{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.glitch span:first-child{
+    animation: glitch 650ms infinite ;
+    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+    transform: translate(-0.025em, -0.0125em);
+    opacity: 0.8;
+}
+.glitch span:last-child{
+    animation: glitch 375ms infinite ;
+    clip-path: polygon(0 80%, 100% 20%, 100% 100%, 0 100%);
+    transform: translate(0.0125em, 0.025em);
+    opacity: 0.8;
+}
+@keyframes spawn {
+    0% {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+    60% {
+        transform: translateY(0px);
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes slide{
+    0%{
+        margin-left: 0px;
+        transform: rotate(180deg);
+    }
+    70%{
+        margin-left: 0px;
+        transform: rotate(180deg);
+    }
+    100%{
+        margin-left: -230px;
+        transform: rotate(0deg);
+    }
+}
+@keyframes fade-out{
+    0%{
+        width: 300px;
+    }
+    60%{
+        width: 300px;
+    }
+    100%{
+        width: 0px;
+    }
+}
+@keyframes upDown {
+    0%{
+        height: 10px;
+    }
+    50%{
+        height: 40px;
+    }
+    100%{
+        height: 10px;
+    }
+}
+@keyframes glitch {
+    0%{
+        text-shadow: 0.05em 0 0 rgba(113, 113, 113, 0.75),
+        -0.025em -0.05em 0 rgba(0, 0, 0, 0.75),
+        0.025em 0.05em 0 rgba(174, 174, 174, 0.75);
+    }
+    14%{
+        text-shadow: 0.05em 0 0 rgba(113, 113, 113, 0.75),
+        -0.025em -0.05em 0 rgba(0, 0, 0, 0.75),
+        0.025em 0.05em 0 rgba(174, 174, 174, 0.75);
+    }
+    15%{
+        text-shadow: -0.05em -0.025em 0 rgba(113, 113, 113, 0.75),
+        0.025em 0.025em 0 rgba(0, 0, 0, 0.75),
+        -0.05em -0.05em 0 rgba(174, 174, 174, 0.75);
+    }
+    49%{
+        text-shadow: -0.05em -0.025em 0 rgba(113, 113, 113, 0.75),
+        0.025em 0.025em 0 rgba(0, 0, 0, 0.75),
+        -0.05em -0.05em 0 rgba(174, 174, 174, 0.75);
+    }
+    50%{
+        text-shadow: 0.025em 0.05em 0 rgba(113, 113, 113, 0.75),
+        0.05em 0 0 rgba(0, 0, 0, 0.75),
+        0 -0.05em 0 rgba(174, 174, 174, 0.75);
+    }
+    99%{
+        text-shadow: 0.025em 0.05em 0 rgba(113, 113, 113, 0.75),
+        0.05em 0 0 rgba(0, 0, 0, 0.75),
+        0 -0.05em 0 rgba(174, 174, 174, 0.75);
+    }
+    100%{
+        text-shadow: -0.025em 0 0 rgba(255, 0, 0, .75),
+        -0.025em -0.025em 0 rgba(0, 255, 0, .75),
+        -0.025em -0.05em 0 rgba(0, 0, 255, .75);
+    }
+}
+@media screen and (max-width: 1030px) {
+    header{
+        width: 25%;
+    }
+    header h1{
+        display: none;
+    }
+    header img{
+        animation: none;
+    }
+  }
